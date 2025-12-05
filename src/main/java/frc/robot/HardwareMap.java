@@ -8,15 +8,8 @@ import edu.wpi.first.wpilibj.DigitalInput;
  */
 public final class HardwareMap {
 	// ID numbers for devices on the CAN bus
-	public static final int CAN_ID_SPARK_DRIVE_FRONT_RIGHT = 1;
-	public static final int CAN_ID_SPARK_DRIVE_BACK_RIGHT = 2;
-	public static final int CAN_ID_SPARK_DRIVE_FRONT_LEFT = 3;
-	public static final int CAN_ID_SPARK_DRIVE_BACK_LEFT = 4;
-	public static final int CAN_ID_SPARK_SHOOTER = 5;
-
-	// Pneumatics channel numbers
-	public static final int PCM_CHANNEL_INTAKE_CYLINDER_FORWARD = 1;
-	public static final int PCM_CHANNEL_INTAKE_CYLINDER_REVERSE = 2;
+	public static final int CAN_ID_TALON_ELEVATOR = 1;
+	public static final int ELEVATOR_GROUND_LIMIT_SWITCH_DIO_PORT = 0;
 
 	// Place jumper from DIO pin 9 to GND to indicate this is a test setup
 	private static final int DIO_TEST_SETUP_CHANNEL = 9;
@@ -33,7 +26,7 @@ public final class HardwareMap {
 	 * Hardware map entry for the example FSM.
 	 * @return if the hardware for the example FSM is present
 	 */
-	public static boolean isExampleFSMEnabled() {
+	public static boolean isElevatorFSMEnabled() {
 		return true;
 	}
 }
