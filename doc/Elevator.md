@@ -26,13 +26,11 @@
 title: Elevator State Diagram
 ---
 stateDiagram-v2
-  flowchart TD
-    Initial --> A(Intake State)
-    A --Driver Input: Go Outtake--> B(Go Outtake, 
-    - Run motors to L4 level)
-    B --L4 sensors have fired--> C(Outtaking,
-    - Wait for user to press press intake button)
-    C --Driver Input: Go Intake--> D(Go Intake,
-    - Run motors to L1 level)
-    D --L1 sensors have fired--> A
+    goOuttake: Go Outtake
+    goIntake: Go Intake
+    [*] --> goOuttake
+    goOuttake --> Outtaking: L4 sensors have fired
+    Outtaking --> goIntake: Driver Input (Intake Button)
+    goIntake --> Intaking: L1 sensors have fired
+    Intaking --> goOuttake: Driver Input (Outtake Button)
 ```
